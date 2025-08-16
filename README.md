@@ -4,15 +4,18 @@ Welcome! This repo is a hands-on path to learn C from zero to confident beginner
 
 ### Quick start
 - Prerequisite: a C compiler (macOS has clang by default; `gcc` also works)
-- Build all examples: see the Makefile section below
+- Build all examples with make (see below)
 - Prefer VS Code? Install the C/C++ extension and open this folder
 
 ### How to build and run
-- Build everything into `bin/`:
-  - make all
-- Run any program, e.g.:
-  - ./bin/hello_world
-  - ./bin/operators
+- Build all example programs into `bin/examples/`:
+  - make examples
+- List available examples:
+  - make list-examples
+- Build one example:
+  - make ex-hello_world
+- Run one example:
+  - make run-hello_world
 
 If you don’t use make:
 - clang -std=c11 -Wall -Wextra -O0 -g -o bin/hello_world src/01_intro/hello_world.c
@@ -30,6 +33,9 @@ If you don’t use make:
 - [10. Structures, Unions, and Enumerations](docs/10-structs-unions-enums.md)
 - [11. File Handling in C](docs/11-file-handling.md)
 - [12. Advanced Topics](docs/12-advanced-topics.md)
+
+### Learn by example
+- Browse runnable examples with tri-lingual kid-friendly comments: [examples](examples/README.md)
 
 ---
 
