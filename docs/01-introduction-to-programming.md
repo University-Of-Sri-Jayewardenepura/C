@@ -1,0 +1,22 @@
+# 1. Introduction to Programming
+
+In this lesson you’ll get a high-level view of programming and where C fits.
+
+## What is programming?
+Programming is writing instructions a computer can execute. Programs are built from simple operations composed into larger behaviors.
+
+## A very brief history
+- Early automation: Hero of Alexandria’s devices; Jacquard loom punched cards.
+- Foundations: Charles Babbage’s Analytical Engine; Ada Lovelace’s algorithms.
+- Computation theory: Alan Turing’s model of computation.
+- C’s lineage: developed by Dennis Ritchie at Bell Labs (1970s) for UNIX.
+
+## Compilers vs. interpreters
+- Compiler: translates source to machine code before running (C).
+- Interpreter: executes directly, translating as it goes (Python, JS engines).
+
+## High-level vs. low-level
+- High-level: easier to write, portable; hides hardware details.
+- Low-level: closer to hardware; more control and performance.
+
+Next: 2. Introduction to C Programming → ../docs/02-introduction-to-c.md
