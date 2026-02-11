@@ -1,7 +1,51 @@
+---
+title: "Advanced Topics"
+description: "Dynamic memory allocation with malloc/free, recursion, and command-line arguments in C."
+---
+
 # 12. Advanced Topics
 
 - Dynamic memory allocation: `malloc`, `calloc`, `realloc`, `free`
 - Recursion
 - Command-line arguments (`int main(int argc, char* argv[])`)
 
-Examples: `src/11_advanced/`.
+## Examples
+
+### Dynamic Memory Allocation (`dynamic_memory.c`)
+
+Creates an array at runtime with `malloc` and frees it when done:
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int n; printf("Enter size: "); scanf("%d", &n);
+    int *a = (int*)malloc((size_t)n * sizeof *a);
+    if (!a) { perror("malloc"); return 1; }
+    for (int i = 0; i < n; i++) a[i] = i;
+    for (int i = 0; i < n; i++) printf("%d ", a[i]);
+    printf("\n");
+    free(a);
+    return 0;
+}
+```
+
+### Recursive Factorial (`factorial_recursive.c`)
+
+Computes N! using recursion, showing base case and recursive step:
+
+```c
+#include <stdio.h>
+
+unsigned long long fact(unsigned int n) {
+    if (n <= 1) return 1ULL; // base case
+    return n * fact(n - 1);  // recursive step
+}
+
+int main(void) {
+    unsigned int n; printf("Enter n: "); scanf("%u", &n);
+    printf("%u! = %llu\n", n, fact(n));
+    return 0;
+}
+```

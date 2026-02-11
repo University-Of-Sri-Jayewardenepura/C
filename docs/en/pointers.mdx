@@ -1,12 +1,57 @@
+---
+title: "Pointers"
+description: "Pointer declaration, dereferencing, arithmetic, and the relationship between arrays and pointers in C."
+---
+
 # 9. Pointers
 
-Pointers hold memory addresses. They are central to C’s power.
+Pointers hold memory addresses. They are central to C's power.
 
 - Declaration and dereferencing
 - Pointer arithmetic
 - Arrays and pointers
 - Pointers to pointers
 
-Examples: `src/08_pointers/`.
+## Examples
 
-Next: 10. Structs/Unions/Enums → ../docs/10-structs-unions-enums.md
+### Swap with Pointers (`swap_pointers.c`)
+
+Demonstrates pass-by-reference using pointers to modify variables in the caller:
+
+```c
+#include <stdio.h>
+
+void swap(int *x, int *y) {
+    int t = *x;
+    *x = *y;
+    *y = t;
+}
+
+int main(void) {
+    int a, b;
+    printf("Enter two integers (a b): ");
+    scanf("%d %d", &a, &b);
+    swap(&a, &b);
+    printf("After swap: a=%d, b=%d\n", a, b);
+    return 0;
+}
+```
+
+### Pointer Arithmetic (`pointer_arithmetic.c`)
+
+Shows how incrementing and decrementing a pointer moves through array elements:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int a[] = {1,2,3};
+    int *p = a;
+    printf("*p=%d\n", *p);
+    p++;
+    printf("*p after ++ = %d\n", *p);
+    p--;
+    printf("*p after -- = %d\n", *p);
+    return 0;
+}
+```

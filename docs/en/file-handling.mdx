@@ -1,7 +1,67 @@
+---
+title: "File Handling in C"
+description: "Reading and writing files using fopen, fclose, fprintf, fscanf, fgets, and related functions."
+---
+
 # 11. File Handling in C
 
 Work with files using `fopen`, `fclose`, `fread`, `fwrite`, `fprintf`, `fscanf`.
 
-Examples: `src/10_files/`.
+## Examples
 
-Next: 12. Advanced Topics → ../docs/12-advanced-topics.md
+### Read and Write a File (`file_read_write.c`)
+
+Writes text to a file and reads it back, demonstrating `fopen`, `fprintf`, `fgets`, and `fclose`:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    FILE *f = fopen("sample.txt", "w");
+    if (!f) { perror("fopen write"); return 1; }
+    fprintf(f, "Hello file!\n");
+    fclose(f);
+
+    f = fopen("sample.txt", "r");
+    if (!f) { perror("fopen read"); return 1; }
+    char buf[64];
+    while (fgets(buf, sizeof buf, f)) {
+        printf("%s", buf);
+    }
+    fclose(f);
+    return 0;
+}
+```
+
+### Count Lines, Words, and Characters (`file_count_lwc.c`)
+
+Reads a file character by character to count lines, words, and characters:
+
+```c
+#include <stdio.h>
+#include <ctype.h>
+
+int main(void) {
+    char name[128];
+    printf("File name: ");
+    if (!fgets(name, sizeof name, stdin)) return 0;
+    for (char *p = name; *p; p++) if (*p=='\n') *p='\0';
+
+    FILE *f = fopen(name, "r");
+    if (!f) { perror("open"); return 1; }
+
+    long lines = 0, words = 0, chars = 0;
+    int c, in_word = 0;
+    while ((c = fgetc(f)) != EOF) {
+        chars++;
+        if (c == '\n') lines++;
+        if (isspace(c)) { if (in_word) { words++; in_word = 0; } }
+        else in_word = 1;
+    }
+    if (in_word) words++;
+
+    fclose(f);
+    printf("Lines=%ld Words=%ld Chars=%ld\n", lines, words, chars);
+    return 0;
+}
+```

@@ -1,3 +1,8 @@
+---
+title: "Functions"
+description: "Function declaration, definition, parameters, return values, and pass-by-value semantics in C."
+---
+
 # 6. Functions
 
 Functions encapsulate behavior and enable reuse and testing.
@@ -6,6 +11,45 @@ Functions encapsulate behavior and enable reuse and testing.
 - Parameters and return values
 - Pass-by-value semantics in C
 
-Examples: `src/05_functions/`.
+## Examples
 
-Next: 7. Arrays → ../docs/07-arrays.md
+### Factorial (`factorial.c`)
+
+A function that computes N! using a loop, demonstrating parameters and return values:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int n;
+    printf("Enter N (0..12): ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Factorial not defined for negative numbers.\n");
+        return 0;
+    }
+
+    unsigned long long fact = 1ULL;
+    for (int i = 1; i <= n; i++) {
+        fact *= (unsigned long long)i;
+    }
+    printf("%d! = %llu\n", n, fact);
+    return 0;
+}
+```
+
+### Add Two Numbers (`add_two_numbers.c`)
+
+A minimal function that takes two parameters and returns their sum:
+
+```c
+#include <stdio.h>
+
+int add(int a, int b) { return a + b; }
+
+int main(void) {
+    printf("add(3,4) = %d\n", add(3,4));
+    return 0;
+}
+```

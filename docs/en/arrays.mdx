@@ -1,3 +1,8 @@
+---
+title: "Arrays"
+description: "Declaration, initialization, indexing, iteration, and passing arrays to functions in C."
+---
+
 # 7. Arrays
 
 Arrays store elements of the same type contiguously in memory.
@@ -7,6 +12,41 @@ Arrays store elements of the same type contiguously in memory.
 - Passing arrays to functions
 - Multidimensional arrays
 
-Examples: `src/06_arrays/`.
+## Examples
 
-Next: 8. Strings → ../docs/08-strings.md
+### Print Array Elements (`array_print.c`)
+
+Demonstrates array declaration, initialization, and iteration with a `for` loop:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int a[5] = {1, 2, 3, 4, 5};
+    for (int i = 0; i < 5; i++) {
+        printf("a[%d] = %d\n", i, a[i]);
+    }
+    return 0;
+}
+```
+
+### Sum Array Elements (`array_sum.c`)
+
+Shows how to pass an array to a function using a pointer parameter:
+
+```c
+#include <stdio.h>
+
+int sum_array(const int *arr, int n) {
+    int s = 0;
+    for (int i = 0; i < n; i++) s += arr[i];
+    return s;
+}
+
+int main(void) {
+    int a[] = {2, 4, 6, 8};
+    int n = (int)(sizeof a / sizeof a[0]);
+    printf("Sum = %d\n", sum_array(a, n));
+    return 0;
+}
+```

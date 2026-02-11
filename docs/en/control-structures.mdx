@@ -1,7 +1,55 @@
+---
+title: "Control Structures"
+description: "Branching with if/else and switch, looping with while, do-while, and for in C."
+---
+
 # 5. Control Structures
 
 Branch with `if/else` and `switch`, loop with `while`, `do-while`, and `for`.
 
-See `src/04_control_flow/`.
+## Examples
 
-Next: 6. Functions → ../docs/06-functions.md
+### Guess the Number (`guess_number.c`)
+
+Demonstrates `if`, `else if`, and `else` branching:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    const int secret = 7;
+    int guess;
+
+    printf("Guess the number (between 1 and 10): ");
+    scanf("%d", &guess);
+
+    if (guess == secret) {
+        printf("Correct!\n");
+    } else if (guess < secret) {
+        printf("Too small!\n");
+    } else {
+        printf("Too big!\n");
+    }
+
+    return 0;
+}
+```
+
+### Multiplication Table (`multiplication_table.c`)
+
+Demonstrates the `for` loop to iterate a fixed number of times:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", n, i, n * i);
+    }
+    return 0;
+}
+```

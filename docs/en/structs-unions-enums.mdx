@@ -1,7 +1,50 @@
+---
+title: "Structures, Unions, and Enumerations"
+description: "Grouping related data with struct, sharing memory with union, and naming constants with enum in C."
+---
+
 # 10. Structures, Unions, and Enumerations
 
 Group related data with `struct`, share memory with `union`, and name integral constants with `enum`.
 
-Examples: `src/09_structs/`.
+## Examples
 
-Next: 11. File Handling → ../docs/11-file-handling.md
+### Student Records (`student_records.c`)
+
+Demonstrates `typedef struct`, arrays of structs, and accessing members with the arrow operator:
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+#define MAX 3
+
+typedef struct {
+    char name[32];
+    int age;
+    double gpa;
+} Student;
+
+void print_student(const Student *s) {
+    printf("%s (age %d) GPA %.2f\n", s->name, s->age, s->gpa);
+}
+
+int main(void) {
+    Student cls[MAX];
+
+    for (int i = 0; i < MAX; i++) {
+        printf("Student %d name: ", i+1);
+        fgets(cls[i].name, sizeof cls[i].name, stdin);
+        size_t len = strlen(cls[i].name);
+        if (len>0 && cls[i].name[len-1]=='\n') cls[i].name[len-1]='\0';
+        printf("Age: "); scanf("%d", &cls[i].age);
+        printf("GPA: "); scanf("%lf", &cls[i].gpa);
+        int c; while ((c=getchar())!='\n' && c!=EOF) { }
+    }
+
+    printf("\nClass list:\n");
+    for (int i = 0; i < MAX; i++) print_student(&cls[i]);
+
+    return 0;
+}
+```

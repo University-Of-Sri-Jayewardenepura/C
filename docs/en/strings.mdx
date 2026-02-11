@@ -1,3 +1,8 @@
+---
+title: "Strings"
+description: "Working with null-terminated character arrays, string I/O, and common string functions in C."
+---
+
 # 8. Strings
 
 Strings are arrays of `char` terminated by `\0`.
@@ -6,6 +11,59 @@ Strings are arrays of `char` terminated by `\0`.
 - Functions: `strlen`, `strcpy`, `strcat`, `strcmp`
 - Examples: palindrome and word count
 
-Examples: `src/07_strings/`.
+## Examples
 
-Next: 9. Pointers → ../docs/09-pointers.md
+### String Length (`string_length.c`)
+
+Manually counts characters until `\0`, illustrating how C strings work internally:
+
+```c
+#include <stdio.h>
+
+int my_strlen(const char *s) {
+    int c = 0;
+    while (s[c] != '\0') c++;
+    return c;
+}
+
+int main(void) {
+    char text[100];
+    printf("Enter text: ");
+    if (fgets(text, sizeof text, stdin)) {
+        int len = my_strlen(text);
+        if (len > 0 && text[len-1] == '\n') text[len-1] = '\0';
+        printf("Length = %d\n", my_strlen(text));
+    }
+    return 0;
+}
+```
+
+### Palindrome Check (`palindrome_string.c`)
+
+Checks whether a word reads the same forward and backward:
+
+```c
+#include <stdio.h>
+
+int is_palindrome(const char *s) {
+    int i = 0, j = 0;
+    while (s[j] != '\0') j++;
+    if (j > 0 && s[j-1] == '\n') j--;
+    j--;
+    while (i < j) {
+        if (s[i] != s[j]) return 0;
+        i++; j--;
+    }
+    return 1;
+}
+
+int main(void) {
+    char text[100];
+    printf("Enter a word: ");
+    if (fgets(text, sizeof text, stdin)) {
+        if (is_palindrome(text)) printf("Palindrome\n");
+        else printf("Not a palindrome\n");
+    }
+    return 0;
+}
+```

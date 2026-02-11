@@ -1,3 +1,8 @@
+---
+title: "Introduction to C Programming"
+description: "Learn the core features of C, write your first program, and understand the compilation pipeline."
+---
+
 # 2. Introduction to C Programming
 
 C is a small, fast, portable systems programming language that powers operating systems, databases, and embedded devices.
@@ -9,10 +14,9 @@ C is a small, fast, portable systems programming language that powers operating 
 
 ## C standards
 - ANSI C (C89/C90), C99, C11 (and later like C17)
-- We’ll use `-std=c11` for examples
+- We'll use `-std=c11` for examples
 
 ## Your first C program
-See `src/01_intro/hello_world.c`.
 
 To build via make:
 - make hello_world
@@ -27,4 +31,32 @@ To run:
 4. Linker combines objects and libraries into an executable
 5. Loader maps the program into memory to run
 
-Next: 3. C Fundamentals → ../docs/03-c-fundamentals.md
+## Examples
+
+### Hello World (`hello_world.c`)
+
+Your very first C program -- prints a message to the console:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+### Add Two Numbers (`add_two_numbers.c`)
+
+A simple program that demonstrates functions, return values, and `printf` formatting:
+
+```c
+#include <stdio.h>
+
+int add(int a, int b) { return a + b; }
+
+int main(void) {
+    printf("add(3,4) = %d\n", add(3,4));
+    return 0;
+}
+```

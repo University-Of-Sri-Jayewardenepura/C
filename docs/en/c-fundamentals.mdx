@@ -1,3 +1,8 @@
+---
+title: "C Fundamentals"
+description: "Variables, constants, data types, and scope -- the building blocks of every C program."
+---
+
 # 3. C Fundamentals
 
 ## Variables and scope
@@ -16,6 +21,40 @@
 - Derived: arrays, pointers, functions
 - User-defined: `struct`, `union`, `enum`
 
-See examples in `src/02_basics/`.
+## Examples
 
-Next: 4. Operators → ../docs/04-operators.md
+### Swap Two Numbers (`swap_temp.c`)
+
+Demonstrates variable declaration, initialization, and assignment:
+
+```c
+#include <stdio.h>
+
+int main(void) {
+    int a, b, temp;
+    printf("Enter two integers (a b): ");
+    scanf("%d %d", &a, &b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swap: a=%d, b=%d\n", a, b);
+    return 0;
+}
+```
+
+### Add Two Numbers (`add_two_numbers.c`)
+
+Shows basic data types (`int`), function return values, and formatted output:
+
+```c
+#include <stdio.h>
+
+int add(int a, int b) { return a + b; }
+
+int main(void) {
+    printf("add(3,4) = %d\n", add(3,4));
+    return 0;
+}
+```
