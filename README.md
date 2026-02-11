@@ -17,27 +17,42 @@ Welcome! This repo is a hands-on path to learn C from zero to confident beginner
 - Run one example:
   - make run-hello_world
 
-If you don’t use make:
+If you don't use make:
 - clang -std=c11 -Wall -Wextra -O0 -g -o bin/hello_world src/01_intro/hello_world.c
 
-### Curriculum menu
-- [1. Introduction to Programming](docs/01-introduction-to-programming.md)
-- [2. Introduction to C Programming](docs/02-introduction-to-c.md)
-- [3. C Fundamentals](docs/03-c-fundamentals.md)
-- [4. Operators in C](docs/04-operators.md)
-- [5. Control Structures](docs/05-control-structures.md)
-- [6. Functions](docs/06-functions.md)
-- [7. Arrays](docs/07-arrays.md)
-- [8. Strings](docs/08-strings.md)
-- [9. Pointers](docs/09-pointers.md)
-- [10. Structures, Unions, and Enumerations](docs/10-structs-unions-enums.md)
-- [11. File Handling in C](docs/11-file-handling.md)
-- [12. Advanced Topics](docs/12-advanced-topics.md)
+### Curriculum
+
+| # | Topic | Lesson | Source |
+|---|-------|--------|--------|
+| 1 | Introduction to Programming | [docs](docs/en/introduction-to-programming.mdx) | — |
+| 2 | Introduction to C Programming | [docs](docs/en/introduction-to-c.mdx) | [src](src/01_intro/hello_world.c) |
+| 3 | C Fundamentals | [docs](docs/en/c-fundamentals.mdx) | [src](src/02_basics/variables.c) |
+| 4 | Operators in C | [docs](docs/en/operators.mdx) | [src](src/03_operators/operators.c) |
+| 5 | Control Structures | [docs](docs/en/control-structures.mdx) | [src](src/04_control_flow/) |
+| 6 | Functions | [docs](docs/en/functions.mdx) | [src](src/05_functions/functions.c) |
+| 7 | Arrays | [docs](docs/en/arrays.mdx) | [src](src/06_arrays/arrays.c) |
+| 8 | Strings | [docs](docs/en/strings.mdx) | [src](src/07_strings/strings.c) |
+| 9 | Pointers | [docs](docs/en/pointers.mdx) | [src](src/08_pointers/pointers.c) |
+| 10 | Structures, Unions, Enums | [docs](docs/en/structs-unions-enums.mdx) | [src](src/09_structs/structs.c) |
+| 11 | File Handling | [docs](docs/en/file-handling.mdx) | [src](src/10_files/file_io.c) |
+| 12 | Advanced Topics | [docs](docs/en/advanced-topics.mdx) | [src](src/11_advanced/malloc_recursion_args.c) |
 
 ### Learn by example
-- Browse runnable examples with tri-lingual kid-friendly comments: [examples](examples/README.md)
+Browse 41 runnable examples with tri-lingual comments (EN/SI/TA): [examples/](examples/README.md)
 
 ---
+
+### Repo structure
+
+```
+docs/
+  en/          ← lessons in English (.mdx, source of truth)
+  si/          ← Sinhala translations (optional)
+  ta/          ← Tamil translations (optional)
+src/           ← compilable lesson source code
+examples/      ← 41 standalone example programs
+Makefile       ← build commands
+```
 
 ### Syllabus Outline
 
