@@ -1,0 +1,18 @@
+{
+  "title": "C Programming",
+  "pages": [
+    "index",
+    "introduction-to-programming",
+    "introduction-to-c",
+    "c-fundamentals",
+    "operators",
+    "control-structures",
+    "functions",
+    "arrays",
+    "strings",
+    "pointers",
+    "structs-unions-enums",
+    "file-handling",
+    "advanced-topics"
+  ]
+}
