@@ -1,11 +1,13 @@
 # Learn by Example
 
 This folder contains runnable, bite-sized C programs. Each file is heavily commented like explaining to a 5-year-old, in three languages:
+
 - English (EN)
 - Sinhala (SI)
 - Tamil (TA)
 
 ## How to use
+
 - Build all examples:
   - make examples
 - List the example names:
@@ -14,7 +16,9 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
   - make run-hello_world
 
 ## Menu
+
 ### 1. Basic Programs
+
 - hello_world.c — First C program
 - absolute_value.c — Using `if`
 - guess_number.c — if / else-if / else
@@ -23,6 +27,7 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
 - min_of_two.c — Conditional operator `?:`
 
 ### 2. Loop-Based Programs
+
 - ascii_table.c — Print ASCII table (while)
 - multiplication_table.c — for-loop
 - sum_n_natural.c — Sum 1..N
@@ -31,6 +36,7 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
 - reverse_number.c — Reverse digits
 
 ### 3. Array & String Programs
+
 - array_print.c
 - array_sum.c
 - array_max.c
@@ -44,6 +50,7 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
 - check_pangram.c
 
 ### 4. Function-Based Programs
+
 - add_two_numbers.c
 - is_prime.c
 - factorial_recursive.c
@@ -52,6 +59,7 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
 - bubble_sort.c
 
 ### 5. Pointer-Based Programs
+
 - pointer_array_access.c
 - pointer_arithmetic.c
 - double_pointer.c
@@ -59,11 +67,13 @@ This folder contains runnable, bite-sized C programs. Each file is heavily comme
 - dynamic_memory.c
 
 ### 6. File Handling Programs
+
 - file_read_write.c
 - file_copy.c
 - file_count_lwc.c
 
 ### 7. Advanced Examples
+
 - matrix_ops.c
 - binary_to_decimal.c
 - calculator_switch.c
